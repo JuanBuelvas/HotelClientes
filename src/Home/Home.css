@@ -1,0 +1,18 @@
+.banner{
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/logincomfamajb.appspot.com/o/sofitel-legend-santa-clara-outdoor-pool.jpg?alt=media&token=c7609f4a-75ad-4a99-b181-0388094a20b9');
+    background-position: top center;
+    background-size: cover;
+    padding: 5% 50% 35% 5%;
+    position: relative;
+    z-index: 1;
+}
+
+.banner::after{
+    content: '';
+    background-color: black;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 1;
+}
