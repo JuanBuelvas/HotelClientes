@@ -7,7 +7,7 @@ import { Menu } from "../Menu/Menu.js"
 export function Rutas(){
     return (
         <div className="App">
-            {/* <Menu></Menu> */}
+            <Menu></Menu>
             <h1>Welcome to React Router!</h1>
             <Routes>
                 <Route path="/" element={<Home />} />
