@@ -20,12 +20,31 @@ export function Actividades(){
                             Sus murallas, que en tiempos remotos sirvieron de escudo, armonizan con balcones coloniales y edificaciones republicanas evocando el esplendor de otras épocas. En 1995, luego de un gran trabajo, el Sofitel Legend Santa Clara Cartagena abrió sus puertas como un hotel de lujo lleno de historia, magia e impactantes anécdotas…”
                         </p>
 
-                        <div>
-                            
+                        {/* <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="..."/>
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
                         </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="..."/>
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="..."/>
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div> */}
 
-
-                        
                     </div>
                 </div>
             </div>
