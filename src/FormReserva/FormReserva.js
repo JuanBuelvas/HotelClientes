@@ -1,8 +1,30 @@
+import { useState } from "react"
+import { ServicioReserva } from "../services/ServicioReserva/ServicioReserva"
 export function FormReserva() {
+
+    const[entrada, setEntrada]=useState("")
+    const[salida, setSalida]=useState("")
+    const[ninos, setNinos]=useState("")
+    const[adultos, setAdultos]=useState("")
+
+    function EnvioFormulario(event){
+        event.preventDefault()
+        // console.log(entrada)
+        // console.log(salida)
+        // console.log(adultos)
+        // console.log(ninos)
+        let data = {
+            "idHabitacion":"6321ef745a1931ff38e7c2c3",
+            "fechaEntrada":entrada,
+            "fechaSalida":salida,
+            "numeroNinos":ninos,
+            "numeroAdultos":adultos
+        }
+    }
+
     return(
         <>
-            <form>
-
+            <form onSubmit={ EnvioFormulario }>
                 <div className="row">
                     <div className="col-12 col-md-8 text-white">
                         <h4>HAZ TU RESERVA</h4>
@@ -14,25 +36,47 @@ export function FormReserva() {
                 <div className="row text-white">
                     <div className="col-12 col-md-4">
                         <label className="form-label">Fecha de Entrada</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
-                            <input type="date" class="form-control"/>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="bi bi-calendar3"></i></span>
+                            <input 
+                                type="date" 
+                                className="form-control"
+                                onChange={(event)=>{
+                                    setEntrada(event.target.value)
+                                }}
+                                value={entrada}
+                            />
                         </div>
                     </div>
                     <div className="col-12 col-md-4">
                         <label className="form-label">Fecha de Salida</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
-                            <input type="date" class="form-control"/>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="bi bi-calendar3"></i></span>
+                            <input 
+                                type="date" 
+                                className="form-control"
+                                onChange={(event)=>{
+                                    setSalida(event.target.value)
+                                }}
+                                value={salida}
+                            />
                         </div>
                     </div>
                 </div>
                 <div className="row text-white">
                     <div className="col-12 col-md-4">
                         <label className="form-label">Numero de Adultos</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="bi bi-person-plus-fill"></i></span>
-                            <select class="form-select" aria-label="Default select example">
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="bi bi-person-plus-fill"></i></span>
+                            <select 
+                                className="form-select" 
+                                aria-label="Default select example"
+                                onChange={(event)=>{
+                                    setAdultos(event.target.value)
+                                }}
+                                value={adultos}
+                                defaultValue="1"
+                            >
                                 <option selected>Escoja una Opcion</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -44,9 +88,17 @@ export function FormReserva() {
                     </div>
                     <div className="col-12 col-md-4">
                         <label className="form-label">Numero de Niños</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="bi bi-person-plus-fill"></i></span>
-                            <select class="form-select" aria-label="Default select example">
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="bi bi-person-plus-fill"></i></span>
+                            <select 
+                                className="form-select" 
+                                aria-label="Default select example"
+                                onChange={(event)=>{
+                                    setNinos(event.target.value)
+                                }}
+                                value={ninos}
+                                defaultValue="0"
+                            >
                                 <option selected>Escoja una Opcion</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -59,7 +111,7 @@ export function FormReserva() {
                 </div>
                 <div className="row text-white">
                     <div className="col-8">
-                        <button type="button" class="btn btn-primary w-100">RESERVAR</button>
+                        <button type="button" className="btn btn-primary w-100">RESERVAR</button>
                     </div>
                 </div>
             </form>
