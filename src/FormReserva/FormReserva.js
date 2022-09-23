@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { ServicioReserva } from "../services/ServicioReserva/ServicioReserva"
-export function FormReserva() {
+import Swal from 'sweetalert2'
+export function FormReserva({idSeleccionado}) {
 
     const[entrada, setEntrada]=useState("")
     const[salida, setSalida]=useState("")
@@ -14,12 +15,23 @@ export function FormReserva() {
         // console.log(adultos)
         // console.log(ninos)
         let data = {
-            "idHabitacion":"6321ef745a1931ff38e7c2c3",
+            "idHabitacion":idSeleccionado,
             "fechaEntrada":entrada,
             "fechaSalida":salida,
             "numeroNinos":ninos,
             "numeroAdultos":adultos
         }
+        //console.log(data)
+        ServicioReserva(data)
+        .then(function (response) {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: response.mensaje,
+                showConfirmButton: false,
+                timer: 1500
+              })
+        })
     }
 
     return(
@@ -111,7 +123,7 @@ export function FormReserva() {
                 </div>
                 <div className="row text-white">
                     <div className="col-8">
-                        <button type="button" className="btn btn-primary w-100">RESERVAR</button>
+                        <button type="submit" className="btn btn-primary w-100">RESERVAR</button>
                     </div>
                 </div>
             </form>
